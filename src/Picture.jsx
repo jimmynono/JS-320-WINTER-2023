@@ -2,10 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 function Picture({ imgUrl, altTag }) {
-    return <img
-        src={imgUrl}
-        alt={altTag}
-    />
+    return <img src={imgUrl} alt={altTag} />
 }
 
 Picture.propTypes = {

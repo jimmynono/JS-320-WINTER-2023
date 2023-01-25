@@ -1,5 +1,5 @@
-// import Picture from './Picture';
-import TodoListApp from "./TodoListApp/TodoListApp";
+import Picture from './Picture';
+import TodoListApp from './TodoListApp/TodoListApp';
 
 function App() {
   return (
