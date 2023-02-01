@@ -6,11 +6,45 @@ function TodoListApp() {
     const [itemToAdd, setItemText] = useState('');
     const [todos, setTodos] = useState([]);
 
+    // {text: 'Wash Cat', isCompleted: true},
+
     const addItem = (event) => {
         event.preventDefault();
-        setTodos([...todos, itemToAdd]);
+
+        const todo = {
+            text: itemToAdd,
+            isCompleted: false
+        }
+        setTodos([...todos, todo]);
         setItemText('');
     }
+
+    const toggleCompleted = (index) => {
+        const todoToUpdate = todos[index]
+
+        const newTodo = {
+            ...todoToUpdate,
+            isCompleted: !todoToUpdate.isCompleted
+        }
+
+        setTodos([
+            ...todos.slice(0, index),
+            newTodo,
+            ...todos.slice(index + 1, todos.length)
+        ])
+    }
+
+
+    // will
+    const deleteTodo = (index) => {
+
+        setTodos([
+            ...todos.slice(0, index),
+            ...todos.slice(index + 1, todos.length)
+        ])
+    }
+
+
 
     return (
         <div>
@@ -20,7 +54,7 @@ function TodoListApp() {
                 setItemText={setItemText}
                 addItem={addItem}
             />
-            <TodoListItems todos={todos} />
+            <TodoListItems todos={todos} toggleCompleted={toggleCompleted} />
         </div>
     )
 }

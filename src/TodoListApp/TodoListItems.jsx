@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function TodoListItems({ todos }) {
+function TodoListItems({ todos, toggleCompleted }) {
     const todoList = todos.map((todo, index) => {
         return (
-            <li key={index}>{todo}</li>
+            <li
+                key={index}
+                onClick={() => toggleCompleted(index)}
+                style={{
+                    textDecoration: todo.isCompleted ? 'line-through' : 'initial'
+                }}>
+                {todo.text}
+            </li>
         )
     })
     return (
@@ -18,7 +25,15 @@ function TodoListItems({ todos }) {
 }
 
 TodoListItems.propTypes = {
-    todos: PropTypes.arrayOf(PropTypes.string)
+    // todos: PropTypes.arrayOf(PropTypes.string)
+    todos: PropTypes.arrayOf(
+        PropTypes.shape({
+            text: PropTypes.string.isRequired,
+            isCompleted: PropTypes.bool.isRequired
+        })
+
+    ),
+    toggleCompleted: PropTypes.func.isRequired
 }
 
 export default TodoListItems
