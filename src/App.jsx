@@ -1,5 +1,8 @@
 import Picture from './Picture';
 import TodoListApp from './TodoListApp/TodoListApp';
+import Blogs from './BlogDemo/Blogs';
+import './App.css';
+
 
 function App() {
   return (
@@ -10,6 +13,8 @@ function App() {
         altTag='Cat walking in slow motion'
       /> */}
       <TodoListApp />
+      <hr />
+      <Blogs />
     </div>
   );
 }

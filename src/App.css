@@ -1,4 +1,27 @@
-.App {
+.blog-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.blog {
+  padding: 15px;
+  width: 33%;
+  max-width: 400px;
+  min-width: 300px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-img {
+  width: 100%;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +58,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

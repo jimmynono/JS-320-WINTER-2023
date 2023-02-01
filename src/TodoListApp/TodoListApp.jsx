@@ -11,6 +11,11 @@ function TodoListApp() {
     const addItem = (event) => {
         event.preventDefault();
 
+        // added this line to prevent empty form submission
+        if (itemToAdd === '') {
+            return;
+        }
+
         const todo = {
             text: itemToAdd,
             isCompleted: false
@@ -35,7 +40,7 @@ function TodoListApp() {
     }
 
 
-    // will
+    // will implement soon
     const deleteTodo = (index) => {
 
         setTodos([
